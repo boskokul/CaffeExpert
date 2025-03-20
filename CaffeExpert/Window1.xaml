@@ -1,0 +1,20 @@
+﻿<Window x:Class="CaffeExpert.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Canvas Button App" Height="450" Width="800">
+    <Grid AllowDrop="True" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button Content="Add Button" Width="100" Height="30" 
+                Click="AddButton_Click" Grid.Row="0" HorizontalAlignment="Left" Margin="10" />
+
+        <Canvas Grid.Row="1" x:Name="MainCanvas" PreviewMouseLeftButtonDown="Canvas_PreviewMouseLeftButtonDown" 
+            PreviewMouseMove="Canvas_PreviewMouseMove" 
+            PreviewMouseLeftButtonUp="Canvas_PreviewMouseLeftButtonUp" Background="Transparent">
+            <Button Name="dragButton" Width="80" Height="21" Canvas.Left="50" Canvas.Top="10">Drag Me!</Button>
+        </Canvas>
+    </Grid>
+</Window>
